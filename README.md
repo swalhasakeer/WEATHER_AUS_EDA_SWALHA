@@ -121,7 +121,11 @@ Rainfall Prediction Using Machine Learning Classifiers
 
 - Handling imbalanced data is crucial for improving performance, especially recall.
 
-- Decision Trees and Random Forests performed well. Random Forest have the highest accuracy, but after SMOTE, this model's accuracy was decreased . So, the selected model is  **RandomForestClassifier** without resampling (SMOTE) . 
+- Decision Trees and Random Forests performed well. Random Forest have the highest accuracy, but after SMOTE, this model's accuracy was decreased . So, the selected model is  **RandomForestClassifier** without resampling (SMOTE) .
+
+
+  ![ChatGPT Image Apr 24, 2025, 01_00_21 PM](https://github.com/user-attachments/assets/53aa628b-9d67-4164-98a2-fcb8b8af7857)
+  
 
 ✅ **Future Work**
 
@@ -130,6 +134,7 @@ Rainfall Prediction Using Machine Learning Classifiers
 - Try ensemble techniques like XGBoost or LightGBM.
 
 - Use time-based train-test split for temporal consistency.
+
 
 ---
 **Prepared by:**
