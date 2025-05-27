@@ -128,6 +128,7 @@ Then open your browser and go to:
 
 ## 📁 **Project Structure**
 ```
+├── WEATHER_AUS_EDA_SWALHA.ipynb
 ├── flask_app.py                  # Flask app
 ├── Scaler.pkl              # Standard Scaler
 ├── templates/
