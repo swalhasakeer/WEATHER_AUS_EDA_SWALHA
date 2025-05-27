@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain Predictor</title>
+    <style>
+        body {
+            background: #e6f0ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #004080;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input[type="number"],
+        input[type="float"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #0066cc;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d99;
+        }
+        .result {
+            margin-top: 20px;
+            background-color: #d9f9d9;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 18px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rain Prediction</h1>
+        <form action="{{ url_for('index') }}" method="post">
+            <label for="Location">Location:</label>
+            <select name="Location" required>
+                <option>Albany</option>
+                <option>Albury</option>
+                <option>AliceSpringsh</option>
+                <option>Ballarat</option>
+                <option>BadgerysCreek</option>
+                <option>Bendigo</option>
+                <option>Brisbaneh</option>
+                <option>Cairns</option>
+                <option>Canberra</option>
+                <option>Cobar</option>
+                <option>CoffsHarbour</option>
+                <option>Darwin</option>
+                <option>Dartmoor</option>
+                <option>GoldCoast</option>
+                <option>Hobart</option>
+                <option>Katherine</option>
+                <option>Launceston</option>
+                <option>Melbourne</option>
+                <option>MelbourneAirport</option>
+                <option>Mildura</option>
+                <option>Moree</option>
+                <option>MountGambier</option>
+                <option>MountGinini</option>
+                <option>Newcastle</option>
+                <option>Nhil</option>
+                <option>NorahHead</option>
+                <option>NorfolkIsland</option>
+                <option>Nuriootpa</option>
+                <option>PearceRAAF</option>
+                <option>Penrith</option>
+                <option>Perth</option>
+                <option>PerthAirport</option>
+                <option>Portland</option>
+                <option>Richmond</option>
+                <option>Sale</option>
+                <option>SalmonGums</option>
+                <option>Sydney</option>
+                <option>SydneyAirport</option>
+                <option>Townsville</option>
+                <option>Tuggeranong</option>
+                <option>Uluru</option>
+                <option>WaggaWagga</option>
+                <option>Walpole</option>
+                <option>Watsonia</option>
+                <option>Williamtown</option>
+                <option>Witchcliffe</option>
+                <option>Wollongong</option>
+                <option>Woomera</option>
+            </select>
+
+            <label for="Rainfall">Rainfall:</label>
+            <input type="number" name="Rainfall" placeholder="Enter Rainfall (mm)" required>
+
+            <label for="WindGustDir">Wind Gust Direction:</label>
+            <select name="WindGustDir" required>
+                <option>E</option>
+                <option>ENE</option>
+                <option>ESE</option>
+                <option>N</option>
+                <option>NE</option>
+                <option>NNE</option>
+                <option>NNW</option>
+                <option>NW</option>
+                <option>S</option>
+                <option>SE</option>
+                <option>SSE</option>
+                <option>SSW</option>
+                <option>SW</option>
+                <option>W</option>
+                <option>WNW</option>
+                <option>WSW</option>
+            </select>
+
+            <label for="RainToday">Rain Today:</label>
+            <select name="RainToday" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="Day">Day:</label>
+            <input type="number" name="Day" placeholder="Enter Day (1-31)" required>
+
+            <label for="Month">Month:</label>
+            <input type="number" name="Month" placeholder="Enter Month (1-12)" required>
+
+            <label for="WindSpeed">Wind Speed:</label>
+            <input type="number" step="0.01" name="WindSpeed" placeholder="Enter Wind Speed" required>
+
+            <label for="Humidity">Humidity:</label>
+            <input type="number" step="0.01" name="Humidity" placeholder="Enter Humidity (%)" required>
+
+            <label for="Pressure">Pressure:</label>
+            <input type="number" step="0.01" name="Pressure" placeholder="Enter Pressure (hPa)" required>
+
+            <label for="Temperature">Temperature:</label>
+            <input type="number" step="0.01" name="Temperature" placeholder="Enter Temperature (°C)" required>
+
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <div class="result">{{ prediction }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
