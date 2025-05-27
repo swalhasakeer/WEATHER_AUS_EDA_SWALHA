@@ -1,11 +1,11 @@
-## **Project Report: Weather Prediction Using Machine Learning**
+# **Project Report: Weather Prediction Using Machine Learning**
 
 ---
 
-**Project Title:**
+## **Project Title:**
 Rainfall Prediction Using Machine Learning Classifiers
 
-🔍 **Problem Statement**
+## 🔍 **Problem Statement**
 
 - The goal of this project is to predict whether it will rain tomorrow in a given Australian location based on historical weather data. The target variable is RainTomorrow, a binary classification problem where:
 
@@ -15,7 +15,7 @@ Rainfall Prediction Using Machine Learning Classifiers
 
 - This problem has real-world implications for sectors like agriculture, transportation, and public safety.
 
-🎯 **Objective / Goal**
+## 🎯 **Objective / Goal**
 
 - Explore and clean the weather dataset.
 
@@ -27,7 +27,7 @@ Rainfall Prediction Using Machine Learning Classifiers
 
 - Compare model performance and save the best model for deployment.
 
-📦 **Dataset Description**
+## 📦 **Dataset Description**
 
 - The dataset used is the weatherAUS.csv file which contains daily weather observations from various locations in Australia.
 
@@ -43,9 +43,9 @@ Rainfall Prediction Using Machine Learning Classifiers
 
    - RainToday, RainTomorrow (target variable)
 
-📊 **Exploratory Data Analysis (EDA)**
+## 📊 **Exploratory Data Analysis (EDA)**
 
-🧱 **Class Distribution**
+## 🧱 **Class Distribution**
 
 - RainTomorrow = 0: ~77.6%
 
@@ -53,13 +53,13 @@ Rainfall Prediction Using Machine Learning Classifiers
 
 - The dataset is imbalanced, requiring balancing techniques like SMOTE.
 
-📈 **Inference from Visualizations**
+## 📈 **Inference from Visualizations**
 
 - Barplot: Average rainfall is significantly higher on days before it rains tomorrow (RainTomorrow=1) compared to when it does not.
 
 - Pie Chart: Shows the class imbalance of the target variable, highlighting the need for resampling.
 
-⚙️ **Machine Learning Models Applied**
+## ⚙️ **Machine Learning Models Applied**
 
 - The following classifiers were trained and tested:
 
@@ -85,7 +85,7 @@ Rainfall Prediction Using Machine Learning Classifiers
 
 - Final Comparison Bar Plot
 
-⚖️ **Handling Imbalanced Data**
+## ⚖️ **Handling Imbalanced Data**
 
 - Technique Used: SMOTE (Synthetic Minority Oversampling Technique)
 
@@ -93,29 +93,50 @@ Rainfall Prediction Using Machine Learning Classifiers
 
 - Model was retrained (Logistic Regression shown here) and compared against the original.
 
-🧠 **Best Performing Model**
+## 🧠 **Best Performing Model**
 
 - The models were evaluated based on accuracy and classification reports. The top-performing model was selected and saved using pickle for future use. DecisionTreeClassifier is the best model in this project.
 
-🧪 **After SMOTE**
+## 🧪 **After SMOTE**
 
 - Accuracy decreased after applying SMOTE
 
-📉 **Performance Visualization**
+## 📉 **Performance Visualization**
 
 - Final model performance was visualized using a seaborn bar plot comparing all model's accuracies.
 
 - Confusion matrices were plotted for each model to show prediction distribution across classes.
 
-📁 **Files Included**
+## 🖥️ **Flask Web Application** 🌐
 
-- Dataset: https://www.kaggle.com/datasets/gauravduttakiit/weather-in-aus
+A simple Flask web app allows users to input weather details and get instant predictions on whether it will rain tomorrow.
 
-- Python Code: Model training, EDA, SMOTE, visualization
+![image](https://github.com/user-attachments/assets/98c9c620-205a-4b51-885b-83ef4fb60025)
 
-- Rain Prediction(RFC) model.pkl: Trained and saved model
 
-📌 **Conclusion**
+### 🏃 How to Run the App Locally
+
+```
+git clone https://github.com/swalhasakeer/WEATHER_AUS_EDA_SWALHA.git
+cd Rain\ Prediction
+pip install -r requirements.txt
+python app.py
+```
+
+Then open your browser and go to:
+📍 http://127.0.0.1:5000/
+
+## 📁 **Project Structure**
+```
+├── flask_app.py                  # Flask app
+├── Scaler.pkl              # Standard Scaler
+├── templates/
+│   └── index.html           # HTML form for user input
+├── requirements.txt
+└── README.md
+```
+
+## 📌 **Conclusion**
 
 - Weather prediction using classification models is feasible with historical data.
 
@@ -127,7 +148,7 @@ Rainfall Prediction Using Machine Learning Classifiers
   ![ChatGPT Image Apr 24, 2025, 01_00_21 PM](https://github.com/user-attachments/assets/53aa628b-9d67-4164-98a2-fcb8b8af7857)
   
 
-✅ **Future Work**
+## ✅ **Future Work**
 
 - Hyperparameter tuning for all models.
 
