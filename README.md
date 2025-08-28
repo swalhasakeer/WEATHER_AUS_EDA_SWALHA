@@ -1,4 +1,4 @@
-# **Project Report: Weather Prediction Using Machine Learning**
+# **Project Report: Rain Prediction Using Machine Learning**
 
 ---
 
